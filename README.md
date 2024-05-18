@@ -1,68 +1,57 @@
-# Universal Battery Database
-
-The Universal Battery Database is an open source software for managing Lithium-ion cell data. Its primary purposes are:
-1. Organize and parse experimental measurement (e.g. long term cycling and electrochemical impedance spectroscopy) data files of Lithium-ion cells.
-2. Perform sophisticated modelling using machine learning and physics-based approaches.
-3. Describe and organize the design and chemistry information of cells (e.g. electrodes, electrolytes, geometry), as well as experimental conditions (e.g. temperature).
-4. Automatically refresh a database as new data comes in.
-5. Visualize experimental results.
-6. Quickly search and find data of interest.
-7. Quality control.
-
-The Universal Battery Database was developed at the [Jeff Dahn Research Group](https://www.dal.ca/diff/dahn/about.html) at Dalhousie University.
-
-## Table of Contents
-
-- [Preliminary Results](#preliminary-results)
-- [Data Management Software Demo](#data-management-software-demo)
-- [Installation](#installation)
-  * [Prerequisites](#prerequisites)
-  * [Two Installation Options](#two-installation-options)
-- [Using the Software](#using-the-software)
-- [Physics and Computer Science Behind the Software](#physics-and-computer-science-behind-the-software)
-- [Contributing](#contributing)
-  * [Code Conventions](#code-conventions)
-  
-## Preliminary Results
-
-![alt text](https://github.com/Samuel-Buteau/universal-battery-database/blob/master/demo_screenshots/capacity_measured_and_modelled.png)
-
-**Figure 1**: Model measurements and make predictions using [`ml_smoothing.py`](https://github.com/Samuel-Buteau/universal-battery-database/wiki/ml_smoothing.py).
-
-## Data Management Software Demo
-
-![alt text](https://github.com/Samuel-Buteau/universal-battery-database/blob/master/demo_screenshots/fix_cycle_example.png)
-
-**Figure 2**: Fix anomologous cycling data using the web browser provided by [`manage.py`](https://github.com/Samuel-Buteau/universal-battery-database/wiki/manage.py).
-
-## Installation
-
-### Prerequisites
-
-- [Python 3](https://www.python.org/downloads/)
-- [pip and virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
-
-### Two Installation Options
-
-1. If you only want to play around with modelling and you have a compiled dataset from somewhere else, you can [install without a database](https://github.com/Samuel-Buteau/universal-battery-database/wiki/Installing-Without-a-Database-(Windows)). This option is simpler and you can always install a database later.
-2. If you want to use the full database features such as parsing and organising experimental data and metadata, you should [install with a database](https://github.com/Samuel-Buteau/universal-battery-database/wiki/Installing-With-a-Database-(Windows)).
-
-
-## Using the Software
-
-Use [`manage.py`](https://github.com/Samuel-Buteau/universal-battery-database/wiki/manage.py) to see the web page and use its analytic features.
-
-Use [`ml_smoothing.py`](https://github.com/Samuel-Buteau/universal-battery-database/wiki/ml_smoothing.py) to use the machine learning model and see the results.
-
-
-## Physics and Computer Science Behind the Software
-
-We hypothesize that we can make [good generalizations](https://github.com/Samuel-Buteau/universal-battery-database/wiki/Generalization-Criteria) by [approximating](https://github.com/Samuel-Buteau/universal-battery-database/wiki/The-Universal-Approximation-Theorem) the functions that map one degradation mechanism to another using neural networks. 
-
-We aim to develop a theory of lithium-ion cells. We first break down the machine learning problem into smaller sub-problems. From there, we develop frameworks to convert the theory to practical implementations. Finally, we apply the method to experimental data and evaluate the result.
-
-## Contributing
-
-### Code Conventions
-
-Generally, we follow [Google's Python Style Guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md).
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通用电池数据库</font></font></h1><a id="user-content-universal-battery-database" class="anchor" aria-label="永久链接：通用电池数据库" href="#universal-battery-database"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通用电池数据库是一款用于管理锂离子电池数据的开源软件。其主要目的是：</font></font></p>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">组织和解析锂离子电池的实验测量（例如长期循环和电化学阻抗谱）数据文件。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用机器学习和基于物理的方法执行复杂的建模。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">描述和组织电池的设计和化学信息（例如电极、电解质、几何形状）以及实验条件（例如温度）。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当新数据进入时自动刷新数据库。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可视化实验结果。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速搜索并找到感兴趣的数据。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">质量控制。</font></font></li>
+</ol>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通用电池数据库是由</font><font style="vertical-align: inherit;">达尔豪斯大学</font></font><a href="https://www.dal.ca/diff/dahn/about.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">杰夫·达恩研究小组开发的。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录</font></font></h2><a id="user-content-table-of-contents" class="anchor" aria-label="固定链接：目录" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="#preliminary-results"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">初步结果</font></font></a></li>
+<li><a href="#data-management-software-demo"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据管理软件演示</font></font></a></li>
+<li><a href="#installation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></a>
+<ul dir="auto">
+<li><a href="#prerequisites"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">先决条件</font></font></a></li>
+<li><a href="#two-installation-options"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">两种安装选项</font></font></a></li>
+</ul>
+</li>
+<li><a href="#using-the-software"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用软件</font></font></a></li>
+<li><a href="#physics-and-computer-science-behind-the-software"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">软件背后的物理和计算机科学</font></font></a></li>
+<li><a href="#contributing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></a>
+<ul dir="auto">
+<li><a href="#code-conventions"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码约定</font></font></a></li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">初步结果</font></font></h2><a id="user-content-preliminary-results" class="anchor" aria-label="永久链接：初步结果" href="#preliminary-results"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/Samuel-Buteau/universal-battery-database/blob/master/demo_screenshots/capacity_measured_and_modelled.png"><img src="https://github.com/Samuel-Buteau/universal-battery-database/raw/master/demo_screenshots/capacity_measured_and_modelled.png" alt="替代文本" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图 1</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：使用 建立测量模型并进行预测</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/ml_smoothing.py"><code>ml_smoothing.py</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据管理软件演示</font></font></h2><a id="user-content-data-management-software-demo" class="anchor" aria-label="永久链接：数据管理软件演示" href="#data-management-software-demo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/Samuel-Buteau/universal-battery-database/blob/master/demo_screenshots/fix_cycle_example.png"><img src="https://github.com/Samuel-Buteau/universal-battery-database/raw/master/demo_screenshots/fix_cycle_example.png" alt="替代文本" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图 2</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：使用 提供的 Web 浏览器修复异常循环数据</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/manage.py"><code>manage.py</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2><a id="user-content-installation" class="anchor" aria-label="永久链接：安装" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">先决条件</font></font></h3><a id="user-content-prerequisites" class="anchor" aria-label="永久链接：先决条件" href="#prerequisites"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://www.python.org/downloads/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">蟒蛇3</font></font></a></li>
+<li><a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">pip 和 virtualenv</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">两种安装选项</font></font></h3><a id="user-content-two-installation-options" class="anchor" aria-label="永久链接：两种安装选项" href="#two-installation-options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您只想尝试建模并且您有从其他地方编译的数据集，则可以</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/Installing-Without-a-Database-(Windows)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在没有数据库的情况下安装</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。此选项更简单，您可以稍后安装数据库。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想使用完整的数据库功能，例如解析和组织实验数据和元数据，您应该</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/Installing-With-a-Database-(Windows)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">随数据库一起安装</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用软件</font></font></h2><a id="user-content-using-the-software" class="anchor" aria-label="永久链接：使用软件" href="#using-the-software"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/manage.py"><code>manage.py</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查看网页并使用其分析功能。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/ml_smoothing.py"><code>ml_smoothing.py</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用机器学习模型并查看结果。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">软件背后的物理和计算机科学</font></font></h2><a id="user-content-physics-and-computer-science-behind-the-software" class="anchor" aria-label="永久链接：软件背后的物理和计算机科学" href="#physics-and-computer-science-behind-the-software"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们假设我们可以</font><font style="vertical-align: inherit;">通过使用神经网络</font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/The-Universal-Approximation-Theorem"><font style="vertical-align: inherit;">近似</font></a><font style="vertical-align: inherit;">将一种退化机制映射到另一种退化机制的函数来做出</font></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/Generalization-Criteria"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">良好的概括。</font></font></a><font style="vertical-align: inherit;"></font><a href="https://github.com/Samuel-Buteau/universal-battery-database/wiki/The-Universal-Approximation-Theorem"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们的目标是发展锂离子电池的理论。我们首先将机器学习问题分解为更小的子问题。在此基础上，我们开发了将理论转化为实际实施的框架。最后，我们将该方法应用于实验数据并评估结果。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码约定</font></font></h3><a id="user-content-code-conventions" class="anchor" aria-label="永久链接：代码约定" href="#code-conventions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一般来说，我们遵循</font></font><a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Google 的 Python 风格指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</article></div>
